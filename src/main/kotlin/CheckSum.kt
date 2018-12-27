@@ -18,6 +18,10 @@ internal class CheckSum : Callable<Void> {
     @CommandLine.Option(names = ["-a", "--algorithm"], description = ["MD5, SHA-1, SHA-256, ..."])
     private var algorithm = "MD5"
 
+    @CommandLine.Option(names = ["-p", "--password"], description = ["Passphrase"], interactive = true)
+    var password: String? = null
+
+
     @Throws(Exception::class)
     override fun call(): Void? {
         // your business logic goes here...
