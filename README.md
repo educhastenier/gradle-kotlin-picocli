@@ -1,5 +1,9 @@
 # gradle-kotlin-picocli
-Project to experiment [PicoCLI](https://picocli.info) using Gradle as the build tool, and Kotlin as the programming language.
+Project to experiment [PicoCLI](https://picocli.info) using
+<img src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/jx7ub3mumyihohgpufm8" alt="Gradle"  width="20" height="20"/>
+as the build tool, and
+<img src="https://cdn-images-1.medium.com/max/1600/1*jF8FIzqLxF5pp-13NogRQw.png" alt="Kotlin" width="20" height="20"/>
+as the programming language.
 
 ## build the project
 ./gradlew jar
