@@ -3,7 +3,7 @@ import picocli.CommandLine.Command
 import picocli.CommandLine.Option
 
 @CommandLine.Command(
-    name = "kotlin-app", version = ["Kotlin picocli v3.0 demo"],
+    name = "mykotlinapp", version = ["Kotlin picocli v3.0 demo"],
     mixinStandardHelpOptions = true, // add --help and --version options
     description = ["""@|bold,fg(red) Kotlin|@ @|underline,italic picocli|@ @|bg(white),blink,fg(blue) example|@ with color usage show-off.
 This application prints out 'Hello World' a certain number of times, according to numeric Option --count (-c)."""],
@@ -53,7 +53,13 @@ class MyKotlinApp : Runnable {
         @Option(names = ["-a", "--all"], description = ["Shows the status of all object, not only the current one"])
         var all: Boolean = false
 
-        @CommandLine.Parameters(index = "0", description = ["The object on which to show the status."])
-        var obj: String = ""
+        @Option(names = ["-o", "--object"], description = ["The object on which to show the status."])
+        var obj: ObjType? = null
+    }
+
+    enum class ObjType {
+        OBJECT,
+        SOURCE,
+        URL
     }
 }

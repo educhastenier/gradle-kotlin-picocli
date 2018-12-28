@@ -25,11 +25,16 @@ Then:
 
 This example also illustrates the usage of color output feature of picocli.
 
-`alias my-kotlin-app='java -cp /home/manu/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.8.2/ad74665a1b8d10b45e7c4bfa6c709dc3b3d9ca78/picocli-3.8.2.jar:build/libs/kotlin-picocli-1.0-SNAPSHOT.jar:~/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.3.11/dd9bff00d6cfca58b6c1fe89be8e0678e35cf35f/kotlin-stdlib-jdk8-1.3.11.jar:/home/manu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/4cbc5922a54376018307a731162ccaf3ef851a39/kotlin-stdlib-1.3.11.jar MyKotlinApp'`
+```
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+. ./mykotlinapp_completion
+alias mykotlinapp='java -cp /home/manu/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.8.2/ad74665a1b8d10b45e7c4bfa6c709dc3b3d9ca78/picocli-3.8.2.jar:build/libs/kotlin-picocli-1.0-SNAPSHOT.jar:~/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.3.11/dd9bff00d6cfca58b6c1fe89be8e0678e35cf35f/kotlin-stdlib-jdk8-1.3.11.jar:/home/manu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/4cbc5922a54376018307a731162ccaf3ef851a39/kotlin-stdlib-1.3.11.jar MyKotlinApp'
+```
 
-`my-kotlin-app --help`:
+`mykotlinapp --help`:
 ```bash
-Usage: kotlin-app [-hV] [-c=<count>] [COMMAND]
+Usage: mykotlinapp [-hV] [-c=<count>] [COMMAND]
 Kotlin picocli example with color usage show-off.
 This application prints out 'Hello World' a certain number of times, according
 to numeric Option --count (-c).
@@ -43,7 +48,9 @@ Commands:
 ```
 
 ```
-my-kotlin-app sub
-my-kotlin-app help status
-my-kotlin-app status -a myObject
+$ my-kotlin-app sub
+$ my-kotlin-app help status
+$ my-kotlin-app status -a myObject
+$ my-kotlin-app status -o <TAB>
+OBJECT   SOURCE   URL                 <-- Shell completion proposes enum values (for @Option's only, not @Parameters)
 ```
