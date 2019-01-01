@@ -47,14 +47,14 @@ class MyKotlinApp : Runnable {
     @Command(name = "status", description = ["Display information about status"])
     class Status : Runnable {
         override fun run() {
-            println("Status of object $obj: ON")
+            println("Status of object $`object`: ON")
         }
 
         @Option(names = ["-a", "--all"], description = ["Shows the status of all object, not only the current one"])
         var all: Boolean = false
 
         @Option(names = ["-o", "--object"], description = ["The object on which to show the status."])
-        var obj: ObjType? = null
+        var `object`: ObjType? = null
     }
 
     enum class ObjType {
